@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — Subscription Tracker{% endblock %}
+{% block content %}
+
+<div class="dashboard-header">
+  <div>
+    <h1>Your Subscriptions</h1>
+    <p class="subtitle">{{ total }} subscription{{ 's' if total != 1 else '' }} detected</p>
+  </div>
+</div>
+
+{% if total == 0 %}
+  <div class="empty-state">
+    <p>No subscriptions detected yet.</p>
+    <a href="{{ url_for('sync') }}" class="btn btn-primary">Sync Gmail now</a>
+  </div>
+{% else %}
+  {% for category, items in by_category.items() %}
+  <section class="category-block">
+    <h2>{{ category }} <span class="count-badge">{{ items|length }}</span></h2>
+    <div class="card-grid">
+      {% for sub in items %}
+      <div class="sub-card">
+        <div class="sub-card-top">
+          <h3>{{ sub.service_name }}</h3>
+          <span class="status-pill status-{{ sub.status }}">{{ sub.status }}</span>
+        </div>
+        <div class="sub-card-body">
+          {% if sub.payment_amount %}
+            <p><strong>{{ sub.currency or '' }} {{ sub.payment_amount }}</strong></p>
+          {% endif %}
+          {% if sub.renewal_date %}
+            <p class="muted">Renews: {{ sub.renewal_date }}</p>
+          {% else %}
+            <p class="muted">Renewal date not found</p>
+          {% endif %}
+        </div>
+        <div class="sub-card-actions">
+          <a href="{{ url_for('subscription_detail', sub_id=sub.id) }}" class="btn btn-ghost btn-sm">Details</a>
+          <a href="{{ url_for('manage_subscription', sub_id=sub.id) }}" class="btn btn-outline btn-sm" target="_blank">Manage / Cancel</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+{% endif %}
+
+{% endblock %}

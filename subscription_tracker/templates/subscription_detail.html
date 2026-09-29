@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}{{ sub.service_name }} — Subscription Tracker{% endblock %}
+{% block content %}
+
+<a href="{{ url_for('dashboard') }}" class="back-link">&larr; Back to dashboard</a>
+
+<div class="detail-card">
+  <div class="detail-header">
+    <h1>{{ sub.service_name }}</h1>
+    <span class="status-pill status-{{ sub.status }}">{{ sub.status }}</span>
+  </div>
+
+  <dl class="detail-list">
+    <dt>Category</dt><dd>{{ sub.category }}</dd>
+    <dt>Amount</dt><dd>{{ sub.currency or '' }} {{ sub.payment_amount or 'Not detected' }}</dd>
+    <dt>Renewal date</dt><dd>{{ sub.renewal_date or 'Not detected' }}</dd>
+    <dt>Detected from</dt><dd>{{ sub.source_email_subject }}</dd>
+    <dt>Sender</dt><dd>{{ sub.source_email_from }}</dd>
+    <dt>Email date</dt><dd>{{ sub.source_email_date }}</dd>
+    <dt>Detection method</dt><dd>{{ sub.detection_method }} (confidence: {{ "%.0f"|format(sub.confidence * 100) }}%)</dd>
+  </dl>
+
+  <a href="{{ url_for('manage_subscription', sub_id=sub.id) }}" class="btn btn-primary" target="_blank">
+    Manage / Cancel on {{ sub.service_name }}
+  </a>
+</div>
+
+{% endblock %}

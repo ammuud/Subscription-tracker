@@ -1,0 +1,8 @@
+.env
+google_client_secret.json
+subscriptions.db
+.venv/
+venv/
+node_modules/
+__pycache__/
+*.py[cod]

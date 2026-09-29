@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Login — Subscription Tracker{% endblock %}
+{% block content %}
+<div class="login-card">
+  <h1>Keep every subscription in one place</h1>
+  <p class="subtitle">
+    Connect your Gmail and we'll scan for subscription, renewal, and payment
+    emails — then show you a clean dashboard so nothing quietly renews
+    without you knowing.
+  </p>
+
+  {% if demo_mode %}
+    <p class="demo-badge">Demo mode is on — you'll sign in with sample data,
+      no Google account needed.</p>
+  {% endif %}
+
+  <a href="{{ url_for('login') }}" class="btn btn-primary btn-large">
+    {% if demo_mode %}Try the demo{% else %}Sign in with Google{% endif %}
+  </a>
+
+  <ul class="feature-list">
+    <li>Read-only Gmail access — nothing is ever sent or deleted</li>
+    <li>Automatic detection of subscriptions, renewal dates, and amounts</li>
+    <li>One-click redirect to each service's own cancellation page</li>
+    <li>Built-in chatbot for quick questions about your subscriptions</li>
+  </ul>
+</div>
+{% endblock %}

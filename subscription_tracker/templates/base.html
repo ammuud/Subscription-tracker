@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Subscription Tracker{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="{{ url_for('index') }}">📬 Subscription Tracker</a>
+    {% if session.get('user_email') %}
+    <nav class="topbar-nav">
+      <span class="user-pill">{{ session.get('user_email') }}</span>
+      <a href="{{ url_for('sync') }}" class="btn btn-ghost">Sync Gmail</a>
+      <a href="{{ url_for('logout') }}" class="btn btn-ghost">Logout</a>
+    </nav>
+    {% endif %}
+  </header>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="flash">
+        {% for m in messages %}<div class="flash-msg">{{ m }}</div>{% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% if session.get('user_email') %}
+  {% include "chatbot_widget.html" %}
+  {% endif %}
+</body>
+</html>

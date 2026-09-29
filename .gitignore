@@ -1,0 +1,8 @@
+/.env
+/*client_secret*.json
+/node_modules/
+/package.json
+/package-lock.json
+/*.zip
+/.venv/
+/venv/

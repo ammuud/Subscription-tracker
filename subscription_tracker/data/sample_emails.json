@@ -1,0 +1,58 @@
+[
+  {
+    "id": "demo1",
+    "subject": "Your Netflix payment was successful",
+    "sender": "Netflix <info@netflix.com>",
+    "date": "Sep 2, 2026",
+    "snippet": "Your payment of ₹649 was successful. Your subscription will auto-renew on Oct 2, 2026."
+  },
+  {
+    "id": "demo2",
+    "subject": "Spotify Premium - Payment Confirmation",
+    "sender": "Spotify <no-reply@spotify.com>",
+    "date": "Aug 28, 2026",
+    "snippet": "Thanks for your payment. Your Spotify Premium membership renews on Sep 28, 2026 for Rs. 119."
+  },
+  {
+    "id": "demo3",
+    "subject": "Your Amazon Prime membership invoice",
+    "sender": "Amazon Prime <auto-confirm@amazon.in>",
+    "date": "Jul 14, 2026",
+    "snippet": "Invoice for your Amazon Prime annual membership. Amount charged: ₹1,499. Renewal: Jul 14, 2027."
+  },
+  {
+    "id": "demo4",
+    "subject": "Google One storage subscription renewal",
+    "sender": "Google One <googleone-noreply@google.com>",
+    "date": "Sep 5, 2026",
+    "snippet": "Your Google One 100GB plan auto-renewal is coming up on Sep 20, 2026. Amount: ₹130/month."
+  },
+  {
+    "id": "demo5",
+    "subject": "Coursera Plus - subscription confirmation",
+    "sender": "Coursera <no-reply@coursera.org>",
+    "date": "Jun 1, 2026",
+    "snippet": "Your Coursera Plus annual subscription is confirmed. Renews Jun 1, 2027 for $399."
+  },
+  {
+    "id": "demo6",
+    "subject": "YouTube Premium billing receipt",
+    "sender": "YouTube <no-reply@youtube.com>",
+    "date": "Sep 6, 2026",
+    "snippet": "Your monthly payment of ₹149 for YouTube Premium was processed. Next billing date: Oct 6, 2026."
+  },
+  {
+    "id": "demo7",
+    "subject": "Weekend sale on kurtis - 40% off",
+    "sender": "Myntra <deals@myntra.com>",
+    "date": "Sep 4, 2026",
+    "snippet": "Don't miss our weekend flash sale, up to 40% off on ethnic wear."
+  },
+  {
+    "id": "demo8",
+    "subject": "Your Adobe Creative Cloud plan",
+    "sender": "Adobe <mail@adobe.com>",
+    "date": "Aug 20, 2026",
+    "snippet": "Your Adobe Creative Cloud Photography plan renews automatically on Sep 20, 2026 for ₹1,603."
+  }
+]

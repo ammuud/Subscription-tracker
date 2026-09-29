@@ -1,0 +1,19 @@
+<div id="chatbot-widget" class="chatbot-collapsed">
+  <button id="chatbot-toggle" class="chatbot-toggle">💬 Ask about your subscriptions</button>
+
+  <div id="chatbot-panel" class="chatbot-panel" style="display:none;">
+    <div class="chatbot-panel-header">
+      <span>Subscription Assistant</span>
+      <button id="chatbot-close">✕</button>
+    </div>
+    <div id="chatbot-messages" class="chatbot-messages">
+      <div class="chat-msg bot">Hi! Ask me things like "how many subscriptions do I have?" or "how does detection work?"</div>
+    </div>
+    <form id="chatbot-form" class="chatbot-form">
+      <input id="chatbot-input" type="text" placeholder="Type a question…" autocomplete="off">
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
